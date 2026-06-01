@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/VLSU-GeoTech-MapGL/static/css/main.f507c4cf.css",
-    "main.js": "/VLSU-GeoTech-MapGL/static/js/main.800eb786.js",
+    "main.css": "/VLSU-GeoTech-MapGL/static/css/main.c0b3adff.css",
+    "main.js": "/VLSU-GeoTech-MapGL/static/js/main.f3b3536c.js",
     "index.html": "/VLSU-GeoTech-MapGL/index.html",
-    "main.f507c4cf.css.map": "/VLSU-GeoTech-MapGL/static/css/main.f507c4cf.css.map",
-    "main.800eb786.js.map": "/VLSU-GeoTech-MapGL/static/js/main.800eb786.js.map"
+    "main.c0b3adff.css.map": "/VLSU-GeoTech-MapGL/static/css/main.c0b3adff.css.map",
+    "main.f3b3536c.js.map": "/VLSU-GeoTech-MapGL/static/js/main.f3b3536c.js.map"
   },
   "entrypoints": [
-    "static/css/main.f507c4cf.css",
-    "static/js/main.800eb786.js"
+    "static/css/main.c0b3adff.css",
+    "static/js/main.f3b3536c.js"
   ]
 }
