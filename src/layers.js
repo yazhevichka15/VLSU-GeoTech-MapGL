@@ -27,7 +27,6 @@ export const heatmapLayer = {
   id: "dtp-heatmap-layer",
 
   filter: ["match", ["sourceAttr", "visible"], [true], true, false],
-
   type: "heatmap",
 
   style: {
@@ -38,19 +37,14 @@ export const heatmapLayer = {
 
       0,
       "rgba(255, 255, 255, 0)",
-
       0.2,
       "#FCE4EC",
-
       0.4,
       "#F8BBD0",
-
       0.6,
       "#EC407A",
-
       0.8,
       "#D81B60",
-
       1,
       "#890017",
     ],

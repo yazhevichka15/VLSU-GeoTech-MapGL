@@ -5,11 +5,10 @@ import { MapSettings } from "../components/MapSettings";
 
 export const HomePage = () => {
   const [showAccidents, setShowAccidents] = useState(true);
-
   const [showHeatmap, setShowHeatmap] = useState(false);
 
   return (
-    <main id="main">
+    <main>
       <header></header>
       <h1>Карта Новосибирска</h1>
 
@@ -22,7 +21,7 @@ export const HomePage = () => {
         setShowHeatmap={setShowHeatmap}
       />
 
-      <footer id="footer">Сделано в учебных целях ООО "Яжевичка"</footer>
+      <footer>Сделано в учебных целях ООО "Яжевичка"</footer>
     </main>
   );
 };

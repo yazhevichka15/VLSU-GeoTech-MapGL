@@ -4,7 +4,9 @@ import { load } from "@2gis/mapgl";
 import { useMap } from "../contexts/MapContext";
 
 import { accidentsLayer, heatmapLayer } from "../layers";
+import { MapWrapper } from "./MapWrapper";
 
+// Центр Новосибирска
 const MAP_CENTER = [82.942926, 55.01446];
 
 export const Map = ({ showAccidents, showHeatmap }) => {
@@ -15,6 +17,7 @@ export const Map = ({ showAccidents, showHeatmap }) => {
   const [geoData, setGeoData] = useState(null);
   const [styleLoaded, setStyleLoaded] = useState(false);
 
+  // Загрузка GeoJSON
   useEffect(() => {
     fetch("/VLSU-GeoTech-MapGL/data/novosibirsk_1000.json")
       .then((response) => response.json())
@@ -22,6 +25,7 @@ export const Map = ({ showAccidents, showHeatmap }) => {
       .catch(console.error);
   }, []);
 
+  // Подключение карты
   useEffect(() => {
     let map;
     let cancelled = false;
@@ -47,15 +51,13 @@ export const Map = ({ showAccidents, showHeatmap }) => {
 
     return () => {
       cancelled = true;
-
       map?.destroy();
-
       mapRef.current = null;
-
       setMap(null);
     };
   }, [setMap]);
 
+  // Подключение GeoJSON на карту
   useEffect(() => {
     const map = mapRef.current;
 
@@ -75,6 +77,7 @@ export const Map = ({ showAccidents, showHeatmap }) => {
     };
   }, [styleLoaded, geoData]);
 
+  // Загрузка слоя с ДТП
   useEffect(() => {
     const map = mapRef.current;
 
@@ -91,6 +94,7 @@ export const Map = ({ showAccidents, showHeatmap }) => {
     }
   }, [showAccidents, styleLoaded]);
 
+  // Загрузка слоя с теплокартой
   useEffect(() => {
     const map = mapRef.current;
 
@@ -107,5 +111,5 @@ export const Map = ({ showAccidents, showHeatmap }) => {
     }
   }, [showHeatmap, styleLoaded]);
 
-  return <div id="map-container" />;
+  return <MapWrapper />;
 };
